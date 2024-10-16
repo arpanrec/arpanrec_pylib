@@ -42,9 +42,9 @@ class StorageConfig(BaseModel):
         self,
         file_path: str,
         file_content: Optional[bytes] = None,
-        content_type: str="text/plain",
-        content_encoding: str="utf-8",
-        content_language: str="en",
+        content_type: str = "text/plain",
+        content_encoding: str = "utf-8",
+        content_language: str = "en",
         error_on_missing_file: bool = True,
     ) -> Optional[str]:
         """

@@ -1,5 +1,5 @@
 import os
-from typing import Optional, Any
+from typing import Any, Optional
 
 import hvac  # type: ignore
 import requests
