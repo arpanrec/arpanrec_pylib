@@ -10,7 +10,7 @@ class VaultOpsRetryError(Exception):
     Exception raised when the init_unseal process is to be tried.
     """
 
-    def __init__(self, *args, **kwargs):  # real signature unknown
+    def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(args, kwargs)
 
 
@@ -19,5 +19,5 @@ class VaultOpsSafeExit(Exception):
     Exit the program safely.
     """
 
-    def __init__(self, *args, **kwargs):  # real signature unknown
+    def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(args, kwargs)

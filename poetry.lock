@@ -2254,6 +2254,42 @@ files = [
 ]
 
 [[package]]
+name = "types-jmespath"
+version = "1.0.2.20240106"
+description = "Typing stubs for jmespath"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-jmespath-1.0.2.20240106.tar.gz", hash = "sha256:b4a65a116bfc1c700a4fd9d24e2e397f4a431122e0320a77b7f1989a6b5d819e"},
+    {file = "types_jmespath-1.0.2.20240106-py3-none-any.whl", hash = "sha256:c3e715fcaae9e5f8d74e14328fdedc4f2b3f0e18df17f3e457ae0a18e245bde0"},
+]
+
+[[package]]
+name = "types-pyyaml"
+version = "6.0.12.20240917"
+description = "Typing stubs for PyYAML"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-PyYAML-6.0.12.20240917.tar.gz", hash = "sha256:d1405a86f9576682234ef83bcb4e6fff7c9305c8b1fbad5e0bcd4f7dbdc9c587"},
+    {file = "types_PyYAML-6.0.12.20240917-py3-none-any.whl", hash = "sha256:392b267f1c0fe6022952462bf5d6523f31e37f6cea49b14cee7ad634b6301570"},
+]
+
+[[package]]
+name = "types-requests"
+version = "2.32.0.20241016"
+description = "Typing stubs for requests"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-requests-2.32.0.20241016.tar.gz", hash = "sha256:0d9cad2f27515d0e3e3da7134a1b6f28fb97129d86b867f24d9c726452634d95"},
+    {file = "types_requests-2.32.0.20241016-py3-none-any.whl", hash = "sha256:4195d62d6d3e043a4eaaf08ff8a62184584d2e8684e9d2aa178c7915a7da3747"},
+]
+
+[package.dependencies]
+urllib3 = ">=2"
+
+[[package]]
 name = "types-s3transfer"
 version = "0.10.3"
 description = "Type annotations and code completion for s3transfer"
@@ -2497,4 +2533,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7e024b5b1ce6cb46147a0b44c85d9d725ef10a0735a00f6d43cfa80137850d20"
+content-hash = "3db6cf71c9b66d371567f7f4ca1ade39d20e22de1824b9d720d9c0240836aa67"

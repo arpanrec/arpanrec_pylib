@@ -20,7 +20,7 @@ class StorageConfig(BaseModel):
     """
 
     type: str
-    option: Dict
+    option: Dict[str, Any]
 
     def storage_ops(self, *args: Any, **kwargs: Any) -> Optional[str]:
         """
@@ -42,9 +42,9 @@ class StorageConfig(BaseModel):
         self,
         file_path: str,
         file_content: Optional[bytes] = None,
-        content_type="text/plain",
-        content_encoding="utf-8",
-        content_language="en",
+        content_type: str="text/plain",
+        content_encoding: str="utf-8",
+        content_language: str="en",
         error_on_missing_file: bool = True,
     ) -> Optional[str]:
         """

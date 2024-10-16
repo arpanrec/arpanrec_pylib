@@ -35,7 +35,7 @@ class VaultHaClient(BaseModel):
     vault_client_key_file: Optional[str] = Field(default=None)
     _hvac_client: hvac.Client = PrivateAttr()
 
-    def __init__(self, vault_config: Optional[VaultConfig] = None, **data):
+    def __init__(self, vault_config: Optional[VaultConfig] = None, **data: str) -> None:
         super().__init__(**data)
         if not vault_config:
             return

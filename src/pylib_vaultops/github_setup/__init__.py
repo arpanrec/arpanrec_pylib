@@ -7,7 +7,7 @@ from .github_bot import add_gpg_to_bot_github
 LOGGER = logging.getLogger(__name__)
 
 
-def setup_github(vault_ha_client: VaultHaClient):
+def setup_github(vault_ha_client: VaultHaClient) -> None:
     """
     Setup GitHub access for the bot and users.
     """

@@ -1,6 +1,6 @@
 """Terraform Cloud Resource Manage"""
 
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import requests
 
@@ -9,11 +9,11 @@ import requests
 def tfe_resource(
     resource_url: str,
     resource_name: str,
-    headers: Dict,
+    headers: Dict[str, str],
     resource_type: str,
-    resource_attributes: Dict[str, Any],
-    result: Dict,
-) -> dict:
+    resource_attributes: Optional[Dict[str, Any]],
+    result: Dict[str, Any],
+) -> Dict[str, Any]:
     """Terraform Cloud Resource Manage"""
     _resource_url_name = f"{resource_url}/{resource_name}"
     _resource_details_response = requests.get(_resource_url_name, timeout=30, headers=headers)
@@ -101,13 +101,13 @@ def tfe_resource(
 
 
 def terraform_workspace(  # pylint: disable=too-many-arguments
-    hostname=None,
-    token=None,
-    organization=None,
-    organization_attributes=None,
-    workspace=None,
-    workspace_attributes=None,
-) -> dict:
+    hostname: Optional[str] = None,
+    token: Optional[str] = None,
+    organization: Optional[str] = None,
+    organization_attributes: Optional[Dict[str, Any]] = None,
+    workspace: Optional[str] = None,
+    workspace_attributes: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     """Terraform Cloud Resource Manage"""
     result: Dict[str, Any] = {
         "changed": False,

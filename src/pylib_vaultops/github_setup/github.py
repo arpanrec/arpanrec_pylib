@@ -15,7 +15,7 @@ from ..utils.github_variable import github_variable
 LOGGER = logging.getLogger(__name__)
 
 
-def add_vault_access_to_github(vault_ha_client: VaultHaClient):
+def add_vault_access_to_github(vault_ha_client: VaultHaClient) -> None:
     """
     This function will add the vault access to the GitHub repository.
     Args:
@@ -117,7 +117,7 @@ def __get_access_secrets(vault_ha_client: VaultHaClient, github_user: str, repo_
     return vault_access_secrets
 
 
-def __set_up_github_access_credential(access_secrets: Dict[str, str], repository_full_name: str, pat: str):
+def __set_up_github_access_credential(access_secrets: Dict[str, str], repository_full_name: str, pat: str) -> None:
     """
     This function will set up the GitHub repository.
     """

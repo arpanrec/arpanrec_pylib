@@ -11,7 +11,7 @@ from ..models.ha_client import VaultHaClient
 LOGGER = logging.getLogger(__name__)
 
 
-def add_gpg_to_bot_github(vault_ha_client: VaultHaClient):
+def add_gpg_to_bot_github(vault_ha_client: VaultHaClient) -> None:
     """
     This function will GPG public key to the GitHub account.
     Args:

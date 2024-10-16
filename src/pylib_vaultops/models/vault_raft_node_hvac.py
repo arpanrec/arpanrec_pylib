@@ -1,5 +1,5 @@
 import os
-from typing import Optional
+from typing import Optional, Any
 
 import hvac  # type: ignore
 import requests
@@ -38,7 +38,7 @@ class VaultRaftNodeHvac(VaultRaftNode):
         default=..., description="The path to the file containing the root CA certificate."
     )
 
-    def __init__(self, rsa_root_ca_key: PrivateKeyTypes, rsa_root_ca_cert: Certificate, **data):
+    def __init__(self, rsa_root_ca_key: PrivateKeyTypes, rsa_root_ca_cert: Certificate, **data: Any) -> None:
         super().__init__(**data)
         generated_vault_client_private_key: GeneratedPrivateKey = generate_private_key(PrivateKeyProperties())
         with open(self.client_key_path, "w", encoding="utf-8") as f:

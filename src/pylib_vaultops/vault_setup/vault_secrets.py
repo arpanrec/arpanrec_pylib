@@ -1,5 +1,5 @@
 import logging
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union, Any
 
 import hvac  # type: ignore
 from hvac.exceptions import InvalidPath  # type: ignore
@@ -19,7 +19,7 @@ def update_vault_secrets(vault_ha_client: VaultHaClient, vault_config: VaultConf
 
     client: hvac.Client = vault_ha_client.hvac_client()
 
-    vault_secrets: Dict[str, Union[str, bool, int, Dict]] = vault_config.vault_secrets.model_dump()
+    vault_secrets: Dict[str, Union[str, bool, int, Dict[str, Any]]] = vault_config.vault_secrets.model_dump()
 
     if vault_secrets is None or not isinstance(vault_secrets, dict):
         raise ValueError("Invalid value for external service secrets, it should be instance of dict")
@@ -30,7 +30,7 @@ def update_vault_secrets(vault_ha_client: VaultHaClient, vault_config: VaultConf
     __create_update_external_services(client, "vault_secrets", vault_secrets)
 
 
-def __create_update_external_services(client: hvac.Client, key: str, value: Dict) -> None:
+def __create_update_external_services(client: hvac.Client, key: str, value: Dict[str, Any]) -> None:
     """Create or update external service secrets in Vault.
     Args:
         client (hvac.Client): Vault client.
@@ -45,7 +45,7 @@ def __create_update_external_services(client: hvac.Client, key: str, value: Dict
         return
 
     to_be_created_or_updated_in_this_key: Dict[str, Union[str, bool, int]] = {}
-    to_be_created_or_updated_next: Dict[str, Union[dict, str, bool, int]] = {}
+    to_be_created_or_updated_next: Dict[str, Union[Dict[str, Any], str, bool, int]] = {}
 
     for sub_key, sub_value in value.items():
         if not isinstance(sub_value, dict):
