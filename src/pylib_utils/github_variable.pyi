@@ -1,7 +1,5 @@
 from typing import Optional
 
-
-# pylint: disable=too-many-arguments,too-many-locals,too-many-return-statements,too-many-branches,too-many-statements
 def github_variable(
     pat: str,
     name: str,
