@@ -3,7 +3,6 @@ import os
 from typing import Any, Dict, Optional
 
 import boto3
-from ansible.inventory.data import InventoryData  # type: ignore
 from botocore.config import Config
 from botocore.exceptions import ClientError
 from botocore.response import StreamingBody
@@ -150,7 +149,7 @@ class StorageConfig(BaseModel):
         except Exception as e:
             raise ValueError("Error reading file") from e
 
-    def add_to_ansible_inventory(self, inventory: InventoryData) -> None:
+    def add_to_ansible_inventory(self, inventory) -> None:
         """
         Add the Vault configuration to the Ansible inventory file.
 
