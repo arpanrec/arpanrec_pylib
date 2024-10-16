@@ -36,8 +36,8 @@ python-terraform = "^0.10.1"
 pygithub = "^2.4.0"
 pydantic = "^2.9.2"
 pydantic-settings = "^2.5.2"
-boto3 = "^1.35.41"
-boto3-stubs = { extras = ["s3"], version = "^1.35.41" } # extras = ["all"]
+boto3 = "^1.35.42"
+boto3-stubs = { extras = ["s3"], version = "^1.35.42" } # extras = ["all"]
 python-gnupg = "^0.5.3"
 
 [tool.poetry.group.dev.dependencies]

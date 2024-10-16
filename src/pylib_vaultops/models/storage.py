@@ -9,6 +9,9 @@ from botocore.response import StreamingBody
 from mypy_boto3_s3.type_defs import GetObjectOutputTypeDef
 from pydantic import BaseModel
 
+# from ansible.inventory.data import InventoryData  # type: ignore
+# from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
+
 
 class StorageConfig(BaseModel):
     """
@@ -115,20 +118,14 @@ class StorageConfig(BaseModel):
         self,
         file_path: str,
         file_content: Optional[bytes] = None,
-        content_type="text/plain",  # pylint: disable=unused-argument
-        content_encoding="utf-8",  # pylint: disable=unused-argument
-        content_language="en",  # pylint: disable=unused-argument
         error_on_missing_file: bool = True,
     ) -> Optional[str]:
         """
         Perform storage operations.
         Args:
-            file_path: Path of the file.
-            file_content: Content of the file.
-            content_type: Type of the content.
-            content_encoding: Encoding of the content.
-            content_language: Language of the content.
-            error_on_missing_file: Whether to raise an error if the file is missing.
+            file_path(str): Path of the file.
+            file_content(Optional[bytes]): Content of the file.
+            error_on_missing_file(bool): Whether to raise an error if the file is missing.
         Returns:
             Optional[str]: The content of the file.
         """
@@ -149,10 +146,10 @@ class StorageConfig(BaseModel):
         except Exception as e:
             raise ValueError("Error reading file") from e
 
-    def add_to_ansible_inventory(self, inventory) -> None:
-        """
-        Add the Vault configuration to the Ansible inventory file.
-
-        Args:
-            inventory: The path to the Ansible inventory file.
-        """
+    # def add_to_ansible_inventory(self, inventory) -> None:
+    #     """
+    #     Add the Vault configuration to the Ansible inventory file.
+    #
+    #     Args:
+    #         inventory: The path to the Ansible inventory file.
+    #     """

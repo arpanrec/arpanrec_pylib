@@ -1,5 +1,5 @@
 import base64
-from typing import Optional
+from typing import Any, Optional
 
 import hvac  # type: ignore
 import requests
@@ -35,7 +35,7 @@ class VaultHaClient(BaseModel):
     vault_client_key_file: Optional[str] = Field(default=None)
     _hvac_client: hvac.Client = PrivateAttr()
 
-    def __init__(self, vault_config: Optional[VaultConfig] = None, **data: str) -> None:
+    def __init__(self, vault_config: Optional[VaultConfig] = None, **data: Any) -> None:
         super().__init__(**data)
         if not vault_config:
             return

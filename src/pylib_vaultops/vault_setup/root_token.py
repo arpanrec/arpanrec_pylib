@@ -124,11 +124,11 @@ def regenerate_root_token(  # pylint: disable=too-many-arguments, too-many-local
 
 
 # pylint: disable=too-many-locals,too-many-branches,too-many-statements
-def vault_token_revoke(vault_client: Union[VaultHaClient, VaultRaftNodeHvac]):
+def vault_token_revoke(vault_client: Union[VaultHaClient, VaultRaftNodeHvac]) -> None:
     """
     Revoke all tokens and destroy all AppRole secret ID accessors in HashiCorp Vault.
     Args:
-        vault_ha_client (VaultHaClient): The details of the HashiCorp Vault Raft node.
+        vault_client (Union[VaultHaClient, VaultRaftNodeHvac]): The details of the HashiCorp Vault Raft node.
     Returns:
         None
     """

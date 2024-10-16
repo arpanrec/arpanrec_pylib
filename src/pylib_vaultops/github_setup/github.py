@@ -10,7 +10,7 @@ from github.NamedUser import NamedUser
 from hvac.exceptions import InvalidPath  # type: ignore
 
 from ..models.ha_client import VaultHaClient
-from ..utils.github_variable import github_variable
+from ...pylib_utils import github_variable
 
 LOGGER = logging.getLogger(__name__)
 
