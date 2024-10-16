@@ -1,4 +1,6 @@
 import base64
+from typing import Optional
+
 from github import Auth, Github
 
 
@@ -7,11 +9,11 @@ def github_variable(
     pat: str,
     name: str,
     unencrypted_value: str,
-    environment,
-    repository,
-    organization,
-    visibility,
+    environment: Optional[str] = None,
+    repository: Optional[str] = None,
+    organization: Optional[str] = None,
     is_base64_encoded: bool = False,
+    visibility: Optional[str] = None,
     is_secret: bool = True,
     state: str = "present",
     api_ep: str = "https://api.github.com",
