@@ -1,33 +1,36 @@
 [tool.poetry]
-name = "pylib-arpanrec"
+name = "pylib"
 version = "0.1.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
 license = "GLWTS"
 readme = "README.md"
 package-mode = true
+packages = [
+    { include = "vaultops", from = "src" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-requests = "2.32.3"
-cryptography = "43.0.1"
-hvac = "2.3.0"
-prettytable = "3.11.0"
-jmespath = "1.0.1"
-python-terraform = "0.10.1"
-pygithub = "2.4.0"
-pydantic = "2.9.2"
-pydantic-settings = "2.5.2"
-boto3 = "1.35.41"
-boto3-stubs = { extras = ["s3"], version = "1.35.41" } # extras = ["all"]
-python-gnupg = "0.5.3"
+requests = "^2.32.3"
+cryptography = "^43.0.1"
+hvac = "^2.3.0"
+prettytable = "^3.11.0"
+jmespath = "^1.0.1"
+python-terraform = "^0.10.1"
+pygithub = "^2.4.0"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+boto3 = "^1.35.41"
+boto3-stubs = { extras = ["s3"], version = "^1.35.41" } # extras = ["all"]
+python-gnupg = "^0.5.3"
 
 [tool.poetry.group.dev.dependencies]
-pylint = "3.3.1"
-black = "24.10.0"
-isort = "5.13.2"
-bandit = "1.7.10"
-poetry-plugin-export = "1.8.0"
+pylint = "^3.3.1"
+black = "^24.10.0"
+isort = "^5.13.2"
+bandit = "^1.7.10"
+poetry-plugin-export = "^1.8.0"
 
 [build-system]
 requires = ["poetry-core"]
