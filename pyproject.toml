@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "arpanrec-pylib"
+version = "0.1.0"
+description = "Common python API's"
+authors = ["arpan <arpan.rec@gmail.com>"]
+license = "GLWTS"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "2.32.3"
+cryptography = "43.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "3.3.1"
+black = "24.10.0"
+isort = "5.13.2"
+bandit = "1.7.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
