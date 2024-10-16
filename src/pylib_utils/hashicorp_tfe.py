@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional
 import requests
 
 
-# pylint: disable=too-many-arguments,too-many-locals,too-many-branches
+# pylint: disable=too-many-arguments,too-many-locals,too-many-branches,too-many-positional-arguments
 def tfe_resource(
     resource_url: str,
     resource_name: str,
@@ -100,7 +100,7 @@ def tfe_resource(
     return result
 
 
-def terraform_workspace(  # pylint: disable=too-many-arguments
+def terraform_workspace(  # pylint: disable=too-many-arguments,too-many-positional-arguments
     hostname: Optional[str] = None,
     token: Optional[str] = None,
     organization: Optional[str] = None,

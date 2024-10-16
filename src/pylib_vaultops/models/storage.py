@@ -41,7 +41,7 @@ class StorageConfig(BaseModel):
 
         raise ValueError("Invalid storage type")
 
-    def __s3_storage_ops(  # pylint: disable=too-many-arguments,too-many-locals
+    def __s3_storage_ops(  # pylint: disable=too-many-arguments,too-many-locals,too-many-positional-arguments
         self,
         file_path: str,
         file_content: Optional[bytes] = None,

@@ -4,7 +4,7 @@ from typing import Optional
 from github import Auth, Github
 
 
-# pylint: disable=too-many-arguments,too-many-locals,too-many-return-statements,too-many-branches,too-many-statements
+# pylint: disable=too-many-arguments,too-many-locals,too-many-return-statements,too-many-branches,too-many-statements,too-many-positional-arguments
 def github_variable(
     pat: str,
     name: str,
