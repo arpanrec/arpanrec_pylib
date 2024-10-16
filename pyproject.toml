@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "arpanrec-pylib"
+name = "pylib-arpanrec"
 version = "0.1.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
