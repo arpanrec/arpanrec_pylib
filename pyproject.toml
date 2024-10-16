@@ -6,7 +6,6 @@ authors = ["arpan <arpan.rec@gmail.com>"]
 license = "GLWTS"
 readme = "README.md"
 package-mode = true
-packages = [{ include = "vaultops", from = "lib" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
