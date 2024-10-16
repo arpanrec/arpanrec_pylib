@@ -36,7 +36,7 @@ jobs:
               run: poetry install
 
             - name: Analysing the code with pylint
-              run: pylint $(git ls-files '*.py')
+              run: poetry run pylint $(git ls-files '*.py')
 
     black:
         runs-on: ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
               run: poetry install
 
             - name: Analysing the code with black
-              run: black --check $(git ls-files '*.py')
+              run: poetry run black --check $(git ls-files '*.py')
     isort:
         runs-on: ubuntu-latest
         name: isort
@@ -89,7 +89,7 @@ jobs:
               run: poetry install
 
             - name: Analysing the code with isort
-              run: isort --check-only $(git ls-files '*.py')
+              run: poetry run isort --check-only $(git ls-files '*.py')
     mypy:
         runs-on: ubuntu-latest
         name: mypy
@@ -115,7 +115,7 @@ jobs:
               run: poetry install
 
             - name: Analysing the code with mypy
-              run: mypy $(git ls-files '*.py')
+              run: poetry run mypy $(git ls-files '*.py')
               # --check-untyped-defs
 
     yamllint:
@@ -143,4 +143,4 @@ jobs:
               run: poetry install
 
             - name: Analysing the code with yamllint
-              run: yamllint .
+              run: poetry run yamllint .
