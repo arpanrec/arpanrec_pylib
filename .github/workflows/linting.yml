@@ -1,0 +1,146 @@
+---
+name: Linting
+
+"on":
+    push:
+    workflow_dispatch:
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    pylint:
+        runs-on: ubuntu-latest
+        name: pylint
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.10", "3.11", "3.12"]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install poetry
+              run: pipx install poetry
+
+            - name: Set up Python "${{ matrix.python-version }}"
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "${{ matrix.python-version }}"
+                  cache: poetry
+                  cache-dependency-path: pyproject.toml
+
+            - name: Install dependencies
+              run: poetry install
+
+            - name: Analysing the code with pylint
+              run: pylint $(git ls-files '*.py')
+
+    black:
+        runs-on: ubuntu-latest
+        name: black
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.10", "3.11", "3.12"]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install poetry
+              run: pipx install poetry
+
+            - name: Set up Python "${{ matrix.python-version }}"
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "${{ matrix.python-version }}"
+                  cache: poetry
+                  cache-dependency-path: pyproject.toml
+
+            - name: Install dependencies
+              run: poetry install
+
+            - name: Analysing the code with black
+              run: black --check $(git ls-files '*.py')
+    isort:
+        runs-on: ubuntu-latest
+        name: isort
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.10", "3.11", "3.12"]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install poetry
+              run: pipx install poetry
+
+            - name: Set up Python "${{ matrix.python-version }}"
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "${{ matrix.python-version }}"
+                  cache: poetry
+                  cache-dependency-path: pyproject.toml
+
+            - name: Install dependencies
+              run: poetry install
+
+            - name: Analysing the code with isort
+              run: isort --check-only $(git ls-files '*.py')
+    mypy:
+        runs-on: ubuntu-latest
+        name: mypy
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.10", "3.11", "3.12"]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install poetry
+              run: pipx install poetry
+
+            - name: Set up Python "${{ matrix.python-version }}"
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "${{ matrix.python-version }}"
+                  cache: poetry
+                  cache-dependency-path: pyproject.toml
+
+            - name: Install dependencies
+              run: poetry install
+
+            - name: Analysing the code with mypy
+              run: mypy $(git ls-files '*.py')
+              # --check-untyped-defs
+
+    yamllint:
+        runs-on: ubuntu-latest
+        name: yamllint
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.10", "3.11", "3.12"]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install poetry
+              run: pipx install poetry
+
+            - name: Set up Python "${{ matrix.python-version }}"
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "${{ matrix.python-version }}"
+                  cache: poetry
+                  cache-dependency-path: pyproject.toml
+
+            - name: Install dependencies
+              run: poetry install
+
+            - name: Analysing the code with yamllint
+              run: yamllint .
