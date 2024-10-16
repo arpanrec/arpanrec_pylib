@@ -1,6 +1,4 @@
 import base64
-from typing import Optional
-
 from github import Auth, Github
 
 
