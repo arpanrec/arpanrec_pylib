@@ -1,3 +1,14 @@
+"""
+This module provides functionality to build a VaultConfig object from a given
+Ansible inventory configuration. The configuration can be provided as a file path
+or a dictionary.
+
+Functions:
+    build_vault_config(ansible_inventory: Union[str, Dict[str, Any]]) -> VaultConfig:
+        Builds the VaultConfig object from the given configuration.
+
+"""
+
 import logging
 import os
 import time

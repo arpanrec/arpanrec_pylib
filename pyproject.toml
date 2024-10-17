@@ -5,6 +5,9 @@ disallow_untyped_calls = true
 disallow_untyped_defs = true
 no_implicit_optional = true
 
+[tool.pylint."FORMAT"]
+max-line-length = 120
+
 [tool.isort]
 profile = "black"
 line_length = 120
@@ -13,16 +16,20 @@ line_length = 120
 line-length = 120
 
 [tool.poetry]
-name = "pylib_arpanrec"
+name = "pylib-arpanrec"
 version = "0.1.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
 license = "GLWTS"
 readme = "README.md"
 package-mode = true
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 packages = [
-    { include = "vaultops", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
     { include = "utils", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
+    { include = "vaultops", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
 ]
 
 [tool.poetry.dependencies]

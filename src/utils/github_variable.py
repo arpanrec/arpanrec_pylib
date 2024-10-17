@@ -1,3 +1,7 @@
+"""
+Module to manage GitHub Action Secrets.
+"""
+
 import base64
 from typing import Optional
 

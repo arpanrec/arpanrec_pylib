@@ -1,3 +1,35 @@
+"""
+This module provides functionality to set up a Vault High Availability (HA) cluster.
+
+The main function in this module is `vault_setup`, which performs the following tasks:
+- Builds the Vault configuration from an inventory file.
+- Loads the root CA key and certificate.
+- Writes the root CA certificate to a file.
+- Creates raft nodes for Vault using HVAC.
+- Creates a HA client for Vault.
+- Initializes and unseals the Vault.
+- Finds a ready Vault node.
+- Generates a new root token if unseal keys are available.
+- Updates all clients with the new root token.
+- Performs raft operations to manage raft nodes.
+- Sets up service admin access if unseal keys are available.
+- Sets up the root PKI.
+- Applies Terraform configurations to codify the Vault setup.
+- Revokes all tokens and secret ID accessors.
+- Updates external service secrets.
+- Takes a raft snapshot.
+
+Dependencies:
+- cryptography
+- hvac
+- os
+- logging
+- typing
+
+Functions:
+- vault_setup: Sets up a Vault HA cluster based on the provided inventory file.
+"""
+
 import logging
 import os
 from typing import Dict
