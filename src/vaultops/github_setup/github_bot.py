@@ -1,5 +1,6 @@
 """
-This module provides functionality to add a GPG public key to a GitHub account using a Vault client to retrieve the necessary secrets.
+This module provides functionality to add a GPG public key to
+a GitHub account using a Vault client to retrieve the necessary secrets.
 
 Functions:
     add_gpg_to_bot_github(vault_ha_client: VaultHaClient) -> None:
