@@ -4,7 +4,7 @@ Module to manage GitHub Action Secrets.
 
 import base64
 import os
-from typing import Optional, Dict
+from typing import Dict, Optional
 
 import requests
 from github import Auth, Github
@@ -159,10 +159,7 @@ def github_release_search(
 
     tag_version: Optional[str] = None
     url: str = f"{github_api_url}/repos/{github_repo}/releases"
-    headers: Dict[str, str] = {
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28"
-    }
+    headers: Dict[str, str] = {"Accept": "application/vnd.github.v3+json", "X-GitHub-Api-Version": "2022-11-28"}
 
     if github_token:
         headers["Authorization"] = f"Bearer {github_token}"
