@@ -1,0 +1,86 @@
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+
+[tool.pylint."FORMAT"]
+max-line-length = 120
+indent-string = '    '
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.poetry]
+name = "pylib-arpanrec"
+version = "0.0.0"
+description = "Common python API's"
+authors = ["arpan <arpan.rec@gmail.com>"]
+license = "GLWTS"
+readme = ["README.md"]
+homepage = "https://arpanrec.github.io/pylib/"
+repository = "https://github.com/arpanrec/pylib.git"
+documentation = "https://arpanrec.github.io/pylib/"
+package-mode = true
+maintainers = []
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+packages = [
+    { include = "utils", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
+    { include = "vaultops", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.32.3"
+cryptography = "^43.0.1"
+hvac = "^2.3.0"
+prettytable = "^3.11.0"
+jmespath = "^1.0.1"
+python-terraform = "^0.10.1"
+pygithub = "^2.4.0"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+boto3 = "^1.35.42"
+boto3-stubs = { extras = ["s3"], version = "^1.35.42" } # extras = ["all"]
+python-gnupg = "^0.5.3"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.3.1"
+black = "^24.10.0"
+isort = "^5.13.2"
+bandit = "^1.7.10"
+poetry-plugin-export = "^1.8.0"
+mypy = "^1.12.0"
+types-requests = "^2.32.0.20241016"
+types-pyyaml = "^6.0.12.20240917"
+types-jmespath = "^1.0.2.20240106"
+pyyaml = "^6.0.2"
+yamllint = "^1.35.1"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.1"
+mkdocstrings = { extras = ["python"], version = "^0.26.2" }
+mkdocs-material = "^9.5.41"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
