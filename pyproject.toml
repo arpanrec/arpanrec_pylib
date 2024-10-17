@@ -13,7 +13,7 @@ line_length = 120
 line-length = 120
 
 [tool.poetry]
-name = "pylib"
+name = "pylib_arpanrec"
 version = "0.1.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
@@ -21,8 +21,8 @@ license = "GLWTS"
 readme = "README.md"
 package-mode = true
 packages = [
-    { include = "pylib_vaultops", from = "src" },
-    { include = "pylib_utils", from = "src" },
+    { include = "vaultops", from = "src", to = "pylib_vaultops", format = ["sdist", "wheel"] },
+    { include = "utils", from = "src", to = "pylib_utils", format = ["sdist", "wheel"] },
 ]
 
 [tool.poetry.dependencies]
