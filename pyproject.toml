@@ -18,13 +18,13 @@ line-length = 120
 
 [tool.poetry]
 name = "pylib-arpanrec"
-version = "0.1.0"
+version = "0.0.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
 license = "GLWTS"
 readme = ["README.md"]
 homepage = "https://arpanrec.github.io/pylib/"
-repository = "ssh://git@github.com:arpanrec/pylib.git"
+repository = "https://github.com/arpanrec/pylib.git"
 documentation = "https://arpanrec.github.io/pylib/"
 package-mode = true
 maintainers = []
