@@ -21,8 +21,8 @@ license = "GLWTS"
 readme = "README.md"
 package-mode = true
 packages = [
-    { include = "vaultops", from = "src", to = "pylib_vaultops", format = ["sdist", "wheel"] },
-    { include = "utils", from = "src", to = "pylib_utils", format = ["sdist", "wheel"] },
+    { include = "vaultops", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
+    { include = "utils", from = "src", to = "pylib_arpanrec", format = ["sdist", "wheel"] },
 ]
 
 [tool.poetry.dependencies]
