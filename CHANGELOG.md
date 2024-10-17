@@ -1,6 +1,6 @@
-# 1.0.0 (2024-10-17)
+# [1.1.0](https://github.com/arpanrec/pylib/compare/1.0.0...1.1.0) (2024-10-17)
 
 
 ### Features
 
-* develop ([#1](https://github.com/arpanrec/pylib/issues/1)) ([f38b3a9](https://github.com/arpanrec/pylib/commit/f38b3a931df3b54c554f6893d98c02f13a41f48c))
+* github latest release search ([#2](https://github.com/arpanrec/pylib/issues/2)) ([721fbf0](https://github.com/arpanrec/pylib/commit/721fbf0a6319dd6701edaafa7931278b51e64174))

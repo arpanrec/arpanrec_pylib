@@ -18,7 +18,7 @@ line-length = 120
 
 [tool.poetry]
 name = "pylib-arpanrec"
-version = "1.0.0"
+version = "1.1.0"
 description = "Common python API's"
 authors = ["arpan <arpan.rec@gmail.com>"]
 license = "GLWTS"
