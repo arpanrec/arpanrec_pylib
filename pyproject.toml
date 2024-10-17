@@ -57,6 +57,14 @@ mypy = "^1.12.0"
 types-requests = "^2.32.0.20241016"
 types-pyyaml = "^6.0.12.20240917"
 types-jmespath = "^1.0.2.20240106"
+pyyaml = "^6.0.2"
+yamllint = "^1.35.1"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.1"
+mkdocstrings = {extras = ["python"], version = "^0.26.2"}
+mkdocs-material = "^9.5.41"
 
 [build-system]
 requires = ["poetry-core"]

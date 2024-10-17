@@ -1,0 +1,9 @@
+---
+site_name: My Docs
+nav:
+    - Home: index.md
+    - About: about.md
+    - reference.md
+theme: material # readthedocs
+plugins:
+    - mkdocstrings:
