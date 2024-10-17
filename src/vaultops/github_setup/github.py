@@ -26,7 +26,7 @@ from github.AuthenticatedUser import AuthenticatedUser
 from github.NamedUser import NamedUser
 from hvac.exceptions import InvalidPath  # type: ignore
 
-from pylib_utils import github_variable
+from utils import github_variable
 
 from ..models.ha_client import VaultHaClient
 
