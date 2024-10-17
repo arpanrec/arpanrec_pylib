@@ -1,3 +1,17 @@
+"""
+This module provides functions to manage Vault secrets, including updating, creating, and deleting secrets.
+
+Functions:
+    update_vault_secrets(vault_ha_client: VaultHaClient, vault_config: VaultConfig) -> None:
+        Update external service secrets in Vault.
+
+    __create_update_external_services(client: hvac.Client, key: str, value: Dict[str, Any]) -> None:
+        Create or update external service secrets in Vault.
+
+    __delete_existing_vault_secrets(client: hvac.Client, key: str) -> None:
+        Delete existing vault secrets.
+"""
+
 import logging
 from typing import Any, Dict, List, Optional, Union
 

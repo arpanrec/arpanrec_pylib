@@ -1,3 +1,17 @@
+"""
+This module provides functionality to take a snapshot of the HashiCorp Vault Raft cluster.
+
+Functions:
+    take_raft_snapshot(vault_ha_client: VaultHaClient, vault_config: VaultConfig) -> None:
+
+Classes:
+
+Exceptions:
+
+Misc variables:
+    LOGGER: Logger instance for this module.
+"""
+
 import logging
 
 from ..models.ha_client import VaultHaClient

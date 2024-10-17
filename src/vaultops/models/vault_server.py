@@ -1,3 +1,10 @@
+"""
+This module defines the VaultServer model, which represents the details of a Vault server.
+
+Classes:
+    VaultServer: A Pydantic model that encapsulates the configuration and state of a Vault server.
+"""
+
 from typing import Dict, List, Optional
 
 from pydantic import BaseModel, Field

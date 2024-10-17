@@ -1,3 +1,19 @@
+"""
+This module defines the data models for managing secrets and configurations 
+required for interacting with HashiCorp Vault and GitHub. The models are 
+implemented using Pydantic's BaseModel to ensure data validation and 
+serialization.
+
+Classes:
+    GitHubProdDetails: Represents the GitHub production details.
+    BotGpgDetails: Represents the GitHub Actions GPG key details.
+    GitHubBotDetails: Represents the GitHub bot details.
+    GithubDetails: Represents the GitHub details.
+    RootPkiDetails: Represents the root PKI details.
+    VaultAdminUserpassDetails: Represents the Vault admin userpass details.
+    VaultSecrets: Represents the secrets required for interacting with HashiCorp Vault.
+"""
+
 from typing import Any, Dict, Union
 
 from pydantic import BaseModel, Field

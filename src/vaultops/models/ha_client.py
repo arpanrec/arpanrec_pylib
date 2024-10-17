@@ -1,3 +1,21 @@
+"""
+This module provides a client for interacting with HashiCorp Vault in a high-availability (HA) setup.
+
+Classes:
+    VaultHaClient: Represents a client for interacting with HashiCorp Vault in an HA setup.
+
+Dependencies:
+    - base64
+    - typing (Any, Optional)
+    - hvac
+    - requests
+    - yaml
+    - pydantic (BaseModel, ConfigDict, Field, PrivateAttr)
+    - requests.sessions (HTTPAdapter)
+    - urllib3 (Retry)
+    - ..models.vault_config (VaultConfig)
+"""
+
 import base64
 from typing import Any, Optional
 

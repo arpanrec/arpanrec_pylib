@@ -1,3 +1,18 @@
+"""
+This module defines the `VaultRaftNode` class, which represents the details of a Vault Raft node.
+
+Classes:
+    VaultRaftNode: A class that encapsulates the details and operations of a Vault Raft node.
+
+
+Properties:
+    vaultops_raft_node_tmp_dir_path (str): Returns the temporary directory path for the local node in the Vault inventory.
+    api_addr (str): Returns the API address for the Vault inventory builder.
+    cluster_addr (str): Returns the cluster address.
+    subject_alt_name (List[str]): Returns a list of subject alternative names (SANs) for the Vault inventory builder.
+    node_id (str): Returns the node ID.
+"""
+
 import os
 from typing import Any, Dict, List, Optional, Set
 

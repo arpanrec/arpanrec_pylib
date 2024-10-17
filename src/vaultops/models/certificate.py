@@ -1,3 +1,14 @@
+"""
+This module defines data models for handling certificates using dataclasses and Pydantic BaseModel.
+
+Classes:
+    GeneratedCertificate: Represents a generated certificate with its attributes.
+    CertificateDetailsKeyUsage: Represents the key usage details of a certificate.
+    CertificateDetailsBasicConstraints: Represents the basic constraints of a certificate.
+    CertificateDetails: Represents the details of a certificate.
+    CertificateProperties: Represents the properties of a certificate.
+"""
+
 import dataclasses
 from typing import Dict, List, Optional
 
