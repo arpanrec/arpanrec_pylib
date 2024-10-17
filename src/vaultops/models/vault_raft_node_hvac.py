@@ -1,3 +1,21 @@
+"""
+This module defines the `VaultRaftNodeHvac` class, which represents a Vault Raft node with HVAC client configuration.
+
+Classes:
+    VaultRaftNodeHvac: Represents a Vault Raft node with HVAC client configuration.
+
+
+Methods:
+    __init__(self, rsa_root_ca_key: PrivateKeyTypes, rsa_root_ca_cert: Certificate, **data: Any) -> None:
+        Initializes the VaultRaftNodeHvac instance.
+
+    client_cert_path(self) -> str:
+
+    client_key_path(self) -> str:
+
+    hvac_client(self) -> hvac.Client:
+"""
+
 import os
 from typing import Any, Optional
 

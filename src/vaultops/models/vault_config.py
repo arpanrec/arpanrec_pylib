@@ -1,5 +1,6 @@
 """
-This module defines the `VaultConfig` class, which represents the configuration and secrets required for interacting with HashiCorp Vault.
+This module defines the `VaultConfig` class, which represents the configuration
+and secrets required for interacting with HashiCorp Vault.
 
 Classes:
     VaultConfig: A class that encapsulates the configuration and secrets for HashiCorp Vault.
@@ -9,11 +10,13 @@ Classes:
 
 Methods:
     __init__(self, **data: Any): Initializes the VaultConfig instance.
-    vault_ha_hostname_san_entry(self) -> str: Returns the Subject Alternative Name (SAN) entry for the Vault HA hostname.
+    vault_ha_hostname_san_entry(self) -> str:
+        Returns the Subject Alternative Name (SAN) entry for the Vault HA hostname.
     vault_secrets(self) -> VaultSecrets: Returns the secrets stored in the file.
     vault_servers(self) -> Dict[str, VaultServer]: Returns the Vault servers.
     tf_state(self, state: Optional[str] = None) -> Optional[str]: Returns the Terraform state file content.
-    unseal_keys(self, unseal_keys: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, str]]: Returns the Vault unseal keys.
+    unseal_keys(self, unseal_keys: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, str]]:
+        Returns the Vault unseal keys.
     save_raft_snapshot(self, snapshot: bytes) -> None: Saves the Raft snapshot to the specified file path.
 """
 

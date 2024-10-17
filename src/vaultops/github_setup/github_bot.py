@@ -1,3 +1,23 @@
+"""
+This module provides functionality to add a GPG public key to a GitHub account using a Vault client to retrieve the necessary secrets.
+
+Functions:
+    add_gpg_to_bot_github(vault_ha_client: VaultHaClient) -> None:
+        Adds a GPG public key to the GitHub account associated with the bot.
+
+    get_gpg_public_key_from_private_key(private_key: str, passphrase: str) -> Tuple[str, str]:
+        Retrieves the GPG public key from a given private key and passphrase.
+
+Modules:
+    logging: Provides logging capabilities.
+    os: Provides a way of using operating system dependent functionality.
+    tempfile: Generates temporary files and directories.
+    typing: Provides runtime support for type hints.
+    gnupg: Provides GPG encryption and decryption functionalities.
+    requests: Allows sending HTTP requests.
+    ..models.ha_client: Provides the VaultHaClient class for interacting with Vault.
+"""
+
 import logging
 import os
 import tempfile

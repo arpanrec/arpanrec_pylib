@@ -2,8 +2,11 @@
 This module defines models related to private keys used in PKI (Public Key Infrastructure) operations.
 
 Classes:
-    PrivateKeyProperties: Represents the properties of a private key, including its content, passphrase, public exponent, and key size.
-    GeneratedPrivateKey: Represents a generated private key, including the RSA private key object, its content, passphrase, and generation status.
+    PrivateKeyProperties:
+        Represents the properties of a private key, including its content, passphrase, public exponent, and key size.
+    GeneratedPrivateKey:
+        Represents a generated private key, including the RSA private key object, its content, passphrase,
+        and generation status.
 
 Dependencies:
     - dataclasses
